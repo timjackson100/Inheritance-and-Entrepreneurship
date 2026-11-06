@@ -1,40 +1,33 @@
-\section{Strand 2: When do people inherit?}
+\section{Sprint candidate 2: Timing of parental inheritance}
 \label{sec:timing}
 
-\subsection{Aim and primary data}
-Estimate age at reported parental inheritance and test whether age at the second parent's death is a useful proxy for inheritance timing.
+\subsection{Five-day question}
+At what age do people report receiving parental inheritances, and how closely does the second parent's death approximate receipt timing? The comparison is entirely within an authorised longitudinal survey.
 
-The primary source is \textbf{ELSA (UKDS 5050)}, particularly candidate Wave 6 inheritance histories and parental survival/death questions. The required fields are respondent birth year, inheritance year/source/value, both parents' death years or survival status, cohort, socioeconomic characteristics, survey weights and longitudinal ID. Exact variable names, accessible waves and overlap remain to be verified.
+\subsection{Data package by December 2026}
+\textbf{ELSA (UKDS 5050; Waves 0--11, 1998--2024)} is currently available under End User Licence. Prepare a documented, licence-compliant extract with respondent birth year/age, parental survival or death years, inheritance receipt year/source/value, cohort, socioeconomic measures, survey weights and longitudinal identifiers. Wave 6 inheritance histories are an initial lead; exact variable names and overlapping observations must be confirmed.
 
-\subsection{Timing measures}
-For respondents with suitable records:
+For respondents with both measures, construct:
 \[
 a_{\mathrm{receipt}}=t_{\mathrm{receipt}}-t_{\mathrm{birth}},
-\qquad
-a_{\mathrm{second\ death}}
-=\max(t_{\mathrm{mother}},t_{\mathrm{father}})-t_{\mathrm{birth}}.
+\quad
+a_{\mathrm{second\ death}}=\max(t_{\mathrm{mother}},t_{\mathrm{father}})-t_{\mathrm{birth}},
+\quad
+\Delta a=a_{\mathrm{receipt}}-a_{\mathrm{second\ death}}.
 \]
-Compare their distributions and calculate
-\[
-\Delta a=a_{\mathrm{receipt}}-a_{\mathrm{second\ death}}
-\]
-only where both measures are observed. An inheritance may arrive at the first death, before either death, after a delay or not at all; the proxy is therefore a hypothesis to test.
+Inheritance can precede the last parental death, follow it with delay, or never occur.
 
-\subsection{Empirical work and outputs}
-Audit sample overlap, missingness and censoring; estimate age distributions and receipt--death differences by cohort and socioeconomic group. Account for recall error, parents still alive and deaths preceding panel entry. Where events and panel observations permit, describe changes in wealth, housing, employment and retirement, while separating inheritance receipt from bereavement effects.
+\subsection{Five-day deliverables}
+Age-at-receipt and age-at-second-death distributions; their overlap and differences; cohort/socioeconomic comparisons; missingness, recall-error and right-censoring diagnostics; reproducible code and disclosure-safe tables. The sprint is conditional on approved participant access and usable variable overlap, rather than merely the existence of the dataset.
 
-Outputs: variable inventory, sample-flow table, age and proxy-validation estimates, uncertainty/sensitivity checks, and shareable code with non-disclosive results.
-
-\subsection{Extensions and access}
-WAS (UKDS 7215) can independently analyse receipts and wealth; Understanding Society (UKDS 6614) may support replication if suitable variables exist. Public ONS life tables can benchmark mortality patterns. These are not guaranteed DSG datasets.
-
-ELSA access and Turing hosting must comply with UK Data Service terms. Survey respondents must not be identified or matched to named probate records. If suitable data access or variables are unavailable, deliver the variable audit, protocol and synthetic test code rather than unsupported empirical estimates.
-
-\subsection{To do}
+\subsection{To do by 31 December 2026}
 \begin{itemize}[nosep]
-\item Obtain and audit ELSA questionnaires, codebooks and relevant End User Licence waves.
-\item Verify inheritance receipt years, parental death years, overlap counts and weights.
-\item Produce age-at-receipt and second-death distributions, with proxy differences and censoring diagnostics.
-\item Check whether enough repeated wealth, housing and work observations surround inheritance events.
-\item Scope independent WAS/Understanding Society replications and confirm DSG access arrangements.
+\item Obtain ELSA EUL files and questionnaires; identify the exact timing variables.
+\item Check overlap sample sizes, parents alive, death before panel entry and survey weights.
+\item Build a minimal analysis extract and produce preliminary distributions.
+\item Confirm Turing participant access and permitted computing arrangements.
+\item Apply a go/no-go check: if access or overlap is insufficient, do not promise empirical sprint estimates.
 \end{itemize}
+
+\subsection{Longer-term extension}
+Extend to Understanding Society or WAS where timing variables allow; examine wealth, housing and retirement trajectories around receipt and parental death; incorporate richer family background and administrative death or estate records only through separately authorised routes. Bereavement and inheritance effects must remain conceptually distinct. Anonymised survey respondents must never be reverse-identified against probate records.

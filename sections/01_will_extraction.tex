@@ -1,50 +1,31 @@
-\section{Strand 1: Extracting information from UK wills}
+\section{Sprint candidate 1: Extracting bequests from wills}
 \label{sec:wills}
 
-\subsection{Aim and core data}
-Test whether open-weight AI can identify testators, beneficiaries, family relationships, assets and intended bequests in England-and-Wales wills, with an auditable source passage for every claim. \emph{A stated bequest is not a confirmed receipt.}
+\subsection{Five-day question}
+How accurately can open-weight AI extract people, relationships, assets and intended bequests from wills, with evidence for every assertion? Score entity/relation F1, supporting-text accuracy and unsupported claims. A gift specified in a will is \emph{not} a confirmed receipt.
 
-The initial benchmark is \textbf{IE4Wills}: 45 authentic US wills with 16,018 annotations (CC BY-NC 4.0; confirm intended use). A proposed sample of \textbf{10--20 UK wills}, subject to legal access and independent annotation, would test transfer to UK drafting. Scotland and Northern Ireland are separate extensions. This small UK sample permits a feasibility study, not a nationally representative accuracy estimate.
-
-\subsection{Extraction and validation}
-Extract the testator, executors/trustees, named beneficiaries, stated relationships, asset types, specific/residuary/conditional gifts and uncertainty. Compare an unadapted US baseline with UK-specific prompts and schema changes; fine-tuning is optional if enough authorised labels exist. Score entity/relation precision, recall and F1, supporting text spans, unsupported assertions and compute cost. Report UK performance separately from US results and use document-level uncertainty intervals.
-
-\subsection{Routes to additional UK documents}
-\begin{description}[style=nextline]
-\item[HMCTS probate copies]
-Purchasable post-grant wills provide an independent test set, but do not show all deaths or actual transfers.
-\item[Will-writing platforms]
-Approach Farewill/Dignity and Co-op Legal Services about a secure research pilot on signed or digitally drafted wills. Distinguish valid final wills from drafts, revoked documents or wills never proved.
-\item[Solicitors and private-client firms]
-Potentially useful for complex drafting, trusts and manually checked annotations; samples will overrepresent their clients.
-\item[Probate and estate-administration firms]
-Co-op Legal Services and Kings Court Trust are promising contacts for \emph{completed estate accounts}, actual net distributions and payment dates. These records would enable research beyond textual extraction.
-\item[Will registers/search services]
-The National Will Register and Estatesearch may identify holders and metadata but should not be assumed to contain full will text or beneficiary receipts.
-\item[Probate genealogists]
-Firms such as Fraser \& Fraser could inform missing-heir and intestacy research, subject to access and confidentiality.
-\end{description}
-
-For each contact, establish the record types held (signed wills, codicils, estate accounts, distribution ledgers), case numbers and dates, retention, geographic coverage, cost, digitisation, research permissions and selection bias. A provider-run, secure extraction pilot with disclosure-safe outputs may be more realistic than receiving a bulk document export.
-
-\subsection{Data conditions and outputs}
-Modern wills can contain personal information about living people. Any use needs appropriate controller permissions, lawful basis, safeguards and a compliant computing environment; pseudonymised data remain personal data. No identifiable wills should be sent to an external model service without explicit permission.
-
-Outputs: an extraction schema, a reproducible benchmark and scoring code, performance/error tables, and a provider-feasibility matrix. If UK access is not agreed, retain the US benchmark and explicitly report the generalisation limitation.
-
-\subsection{Reference sources}
+\subsection{Data package by December 2026}
 \begin{itemize}[nosep]
-\item HMCTS: \url{https://www.gov.uk/search-will-probate}
-\item Co-op probate: \url{https://www.co-oplegalservices.co.uk/probate-solicitors/}
-\item Farewill partnerships: \url{https://partnerships.farewill.com/handbook/introduction}
-\item ICO research safeguards: \url{https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/the-research-provisions/what-are-the-appropriate-safeguards/}
+\item \textbf{Firm core:} IE4Wills, containing 45 authentic US wills and 16,018 human annotations, with published splits, reference labels and baseline extraction code (subject to CC BY-NC 4.0 terms).
+\item \textbf{UK adaptation test, if cleared:} 10--20 England-and-Wales probate wills with independently reviewed labels and documented legal processing/hosting permissions. Report UK results separately; the small sample cannot establish national accuracy.
+\item A schema for testators, beneficiaries, relationships, specific/residuary/conditional gifts and source passages; a reproducible scoring script and a short test plan.
 \end{itemize}
 
-\subsection{To do}
+The sprint remains a valid US benchmark and domain-transfer feasibility exercise if the UK pilot is not ready. No identifiable modern wills will be sent to unauthorised external model services.
+
+\subsection{Five-day deliverables}
+Compare an IE4Wills baseline with open-weight prompting/schema adaptation and, if approved, UK examples. Return accuracy, uncertainty, error categories, computational cost and annotated outputs permitted by the licences.
+
+\subsection{To do by 31 December 2026}
 \begin{itemize}[nosep]
-\item Confirm IE4Wills licence, splits and baseline; finalise the extraction/annotation schema.
-\item Buy or obtain a diverse initial UK will sample and arrange independent labels.
-\item Shortlist and contact commercial, legal and probate providers; ask specifically about final estate accounts.
-\item Record permissions, sample selection, confidentiality, cost and hosting arrangements in a comparison matrix.
-\item Run US-to-UK adaptation tests and report errors with document-level uncertainty.
+\item Confirm IE4Wills licence, sample splits and benchmark reproduction.
+\item Define the extraction schema, evaluation protocol and independent UK labels.
+\item Seek an initial HMCTS probate sample; confirm permission and safe hosting before including it.
+\item Prepare scripts, documentation and a small dry run of the full scoring pipeline.
+\item Decide by year-end whether the UK adaptation test is cleared or remains an extension.
 \end{itemize}
+
+\subsection{Longer-term extension}
+Build a larger and more representative UK wills corpus through HMCTS, solicitors, will-writing services (for example Farewill/Dignity and Co-op Legal Services), and estate-administration firms (for example Kings Court Trust). Registries such as the National Will Register may help locate records, but do not necessarily hold full text. Approach providers with a proposal for a governed pilot and ask about signed/revoked wills, codicils, dates, coverage, permissions and selection bias.
+
+Most importantly, seek \emph{final estate accounts} and beneficiary payment dates: these distinguish intended bequests from realised net receipts and could support subsequent inheritance-distribution research. Such person-level work requires a separate lawful, custodian-approved project.

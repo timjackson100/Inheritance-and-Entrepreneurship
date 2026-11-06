@@ -1,40 +1,31 @@
-\section{Follow-on UK data architecture and access}
+\section{Sprint candidate 4: Mapping UK inheritance data and linkage feasibility}
 \label{sec:followon}
 
-The following is a \emph{separate, longer-term data programme}, not a committed Turing DSG deliverable. Sections \ref{sec:ifs}--\ref{sec:gifts} set out the distinct inequality, recipient-outcome and donor-side research streams.
+\subsection{Five-day question}
+Can open-weight AI build a reliable, source-grounded inventory of UK inheritance datasets and identify which variables and identifiers would be needed to study estate-to-beneficiary-to-outcome relationships? Can missing identifiers and matching errors be evaluated on a fictional known-truth benchmark?
 
-\subsection{What would an ideal dataset contain?}
-Five linked record types:
-\begin{enumerate}[nosep]
-\item \textbf{Estate/donor:} wealth/assets, death or gift date, tax and family composition.
-\item \textbf{Intended gift:} named beneficiaries, relationships, shares and conditions in wills/trusts.
-\item \textbf{Realised transfer:} net amount, asset type, recipient and actual transfer date.
-\item \textbf{Recipient baseline:} age, wealth, education, family background, income and location.
-\item \textbf{Recipient outcomes:} subsequent wealth, work, entrepreneurship, housing, debt and saving.
-\end{enumerate}
-No currently identified accessible UK source supplies the entire chain. In particular, intended gifts in wills and final distributions in estate accounts are different observations.
-
-\subsection{Candidate sources}
-\begin{description}[style=nextline]
-\item[ELSA] Parental mortality, inheritance histories and later-life wealth/work outcomes; licensed and subject to variable audit.
-\item[WAS] Wealth components, inheritance and lifetime transfers, housing, debts and pensions; survey coverage and longitudinal overlap require checks.
-\item[Understanding Society] Possible transfer, employment and household trajectories; exact variables not yet established.
-\item[ONS Longitudinal Study] Restricted census and life-events sample, used in the IFS projections for intergenerational characteristics.
-\item[HMRC/ONS/HMCTS] Potential estate, tax, probate and economic administrative records; availability and any lawful linkage route remain unverified.
-\item[Private probate/estate firms] Potential wills, final accounts, beneficiary relationships and payments; contact and permission required.
-\item[Companies House/Land Registry] Potential firm and housing outcomes, not automatic person-level matches.
-\end{description}
-
-\subsection{Minimum data inventory and access boundaries}
-For each source, record unit, population, period, transfer type, amount, date, donor--recipient relationship, asset composition, outcome variables, sample coverage, identifiers, licence and disclosure conditions. Mark fields as \emph{verified}, \emph{candidate} or \emph{unavailable}.
-
-Start with analyses wholly inside licensed surveys. Separate samples can be compared in aggregate without matching identifiable probate material to anonymous survey records. Any individual-level administrative linkage requires custodian approval and secure governance. Pseudonymised data remain personal data.
-
-\subsection{To do}
+\subsection{Data package by December 2026}
+This sprint is feasible \emph{without} access to identifiable tax, probate or survey records. Prepare:
 \begin{itemize}[nosep]
-\item Build a single variable/access matrix for ELSA, WAS, Understanding Society, ONS LS and administrative sources.
-\item Confirm UKDS permissions and which inheritance/wealth variables coexist across waves.
-\item Ask probate and estate providers about final accounts, dates, relationships, sampling and secure pilot options.
-\item Develop a precise HMRC Datalab scoping request tied to HMRC functions and identify possible identifiers/outcomes with custodians.
-\item Rank candidate linked datasets by feasibility, additional information gained and governance burden.
+\item Published data dictionaries and questionnaires for ELSA (UKDS 5050), WAS (7215), Understanding Society (6614), and public HMCTS, ONS, HMRC, Companies House and Land Registry descriptions.
+\item A manually reviewed set of key variables and relationships: deceased/estate, parent, beneficiary, transfer date/value, wealth, property, employment and business outcomes, with exact source references.
+\item Fictional estate, donor, beneficiary and recipient-outcome records with known true/false identity matches and controlled missing/incorrect identifiers.
+\item A baseline extraction, semantic matching and record-linkage scoring script.
 \end{itemize}
+
+The benchmark must separate \emph{documented fields} from variables merely hoped to exist. Open data dictionaries do not confer permission to redistribute survey microdata or match survey respondents to named estates.
+
+\subsection{Five-day deliverables}
+A verified data architecture and minimum viable variable list; extraction/semantic matching accuracy with evidence passages; linkage precision and recall on synthetic records; and a ranked list of fields whose availability would most improve real research feasibility. Negative findings about access or missing variables are valuable outputs.
+
+\subsection{To do by 31 December 2026}
+\begin{itemize}[nosep]
+\item Collect and version public codebooks, questionnaires and rights statements.
+\item Manually label a small set of key concepts and candidate link fields.
+\item Generate fictional estate--beneficiary--outcome pairs and controlled matching errors.
+\item Implement a rule-based baseline and independent evaluation scripts.
+\item Freeze the documentation corpus and permissions register before the sprint.
+\end{itemize}
+
+\subsection{Longer-term extension}
+Pursue separate data-owner approvals for real estate accounts, HMRC Datalab, HMCTS, ONS and company/property outcomes; seek secure, custodian-led linkage only if appropriate identifiers and lawful arrangements exist. Work with will-writing and probate firms on actual distributions. Extend the metadata inventory as sources change, but never attempt to identify pseudonymised survey participants against public wills.

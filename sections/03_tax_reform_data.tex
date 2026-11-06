@@ -1,0 +1,80 @@
+\section{Strand 3: Inheritance-tax reforms and economic outcomes}
+\label{sec:tax}
+
+\subsection{Research question}
+What changes in business formation, housing, consumption, household debt and saving can be detected around estate- and inheritance-tax reforms? This strand uses public \emph{aggregate} data, not identifiable beneficiary records.
+
+\subsection{Core US state-year panel}
+The initial design is a panel of 50 states and the District of Columbia, with a target analysis period of 2003--2024 (up to 1,122 state-years before variable-specific missingness). Earlier source observations may be retained for pre-period checks.
+
+The six principal repeal jurisdictions are Ohio, North Carolina, Indiana, Tennessee, New Jersey and Delaware, with reforms occurring between 2013 and 2018. Each enactment, transition and effective date will be recorded separately, including New Jersey's 2017 estate-tax exemption increase and 2018 estate-tax repeal (its inheritance tax continued).
+
+\subsection{Core outcome sources}
+\begin{description}[style=nextline]
+\item[Business formation]
+US Census Business Dynamics Statistics (BDS): establishment births, firm start-ups and employment creation. Business Formation Statistics applications are a possible supplementary indicator but are not equivalent to realised start-ups.
+\item[Housing]
+Federal Housing Finance Agency house-price indexes; American Community Survey ownership, tenure and household characteristics.
+\item[Consumption]
+Bureau of Economic Analysis state personal consumption expenditure, by state and category, with consistent real/per-capita transformations.
+\item[Household debt]
+New York Fed state-level household debt balances, components and delinquency. These are debt \emph{stocks}, not repayments or debt-service flows.
+\item[Macroeconomic controls and distribution]
+BEA state GDP and income; ACS distribution measures where coverage permits.
+\item[Reform exposure and size]
+Official statutes and administrative guidance for announcement, enactment and effective dates; Census Annual Survey of State Government Tax Collections, death- and gift-tax item T50, to scale pre-reform tax exposure.
+\end{description}
+
+Every series needs a dictionary with unit, frequency, geographic scope, source URL, vintage, transformations, missingness and licensing. Annual and quarterly panels should remain separate unless aggregation is defensible.
+
+\subsection{Verified policy-event register}
+Build one row per legislative step rather than one row per country or a blanket binary reform indicator. Suggested fields:
+\begin{itemize}[nosep]
+\item jurisdiction, reform identifier, estate/inheritance/gift tax category;
+\item announcement, passage and effective dates; transitional and expiry rules;
+\item thresholds, exemptions, bracket rates and affected relationship classes;
+\item concurrent tax or spending measures that may confound evaluation;
+\item primary-document location, supporting passage and independent verification status.
+\end{itemize}
+
+The proposal scoped roughly 19 legislative steps and 50--70 primary or official documents, including extensions. Public documents can also test whether open-weight AI reliably extracts legal policy parameters. Altered test documents, clearly labelled synthetic, can detect reliance on memorised rather than supplied text.
+
+\subsection{Empirical baseline and checks}
+The first analyses are staggered event studies and difference-in-differences for the US repeal episodes, prioritising firm formation and house prices. Prepare comparison-state screening, pre-trend and announcement/anticipation checks, placebo dates, robustness to donor selection, migration and age-composition checks, and a power analysis. Synthetic-control and synthetic difference-in-differences exercises are possible extensions. The policy-register extraction test can assess whether AI coding errors change estimated results.
+
+\subsection{International secondary panels}
+These are conditional on completion of the core US package:
+\begin{description}[style=nextline]
+\item[Norway]
+2014 abolition of inheritance and gift tax; Statistics Norway accounts, debt/wealth, housing and enterprise series, with concurrent-policy screening.
+\item[Finland]
+2013 and 2015 increases and 2017 reductions; Statistics Finland accounts, indebtedness and dwelling prices. Business-demography breaks around 2013 must not be spliced without validation.
+\item[South Africa]
+2018 increase in the top estate-duty rate for qualifying estates; South African Reserve Bank saving, consumption and debt data, BIS house prices and World Bank business registrations. Other 2018 fiscal changes are possible confounders.
+\end{description}
+Sweden, Japan, Italy, the Philippines and Colombia were proposed for \emph{policy-document extraction} only, not as core outcome panels.
+
+\subsection{Proposed data products}
+\begin{itemize}[nosep]
+\item \texttt{us\_state\_year.parquet}: outcomes, reform exposure, reform-size measures and missingness.
+\item \texttt{outcome\_series\_long.csv}: documented indicator series, with source variants and units.
+\item \texttt{policy\_events.csv} and \texttt{register\_dictionary.csv}: checked reforms and coding rules.
+\item \texttt{documents/}: appropriately licensed source text, PDFs and provenance.
+\item \texttt{altered\_events.csv} and labelled synthetic altered documents for the extraction challenge.
+\item \texttt{country\_year.parquet}, \texttt{country\_quarter.parquet} and \texttt{country\_controls.csv}: conditional international extensions.
+\item \texttt{indicator\_dictionary.csv} and \texttt{baselines/}: metadata, reproducible econometric code and extraction benchmarks.
+\end{itemize}
+
+\subsection{Preparation sequence}
+\begin{description}[style=nextline]
+\item[November 2026]
+Assemble and document the US panel; double-check the core reform register against primary legislation.
+\item[December 2026]
+Run baseline event studies and power calculations; prepare an extraction baseline and clearly altered test documents.
+\item[January 2027]
+Pilot and freeze the core package; add international panels only if the US work is sufficiently complete.
+\item[February--March 2027]
+Turing data-review and computing checks, followed by the planned DSG.
+\end{description}
+
+All data availability and licences must be checked at preparation time. The original timetable is a proposal, not proof that datasets have been assembled.

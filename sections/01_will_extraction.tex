@@ -41,6 +41,46 @@ The published IE4Wills test split is small, so uncertainty should be reported at
 \subsection{Expected outputs}
 A documented extraction schema; clean benchmark and scoring scripts; runnable open-weight baselines; an error taxonomy; and a report on what UK-specific adaptation does and does not achieve.
 
+\subsection{Alternative routes to a UK wills corpus}
+The original proposal relied on purchasing a small number of post-probate wills through HMCTS. We should also seek a research partnership with holders of modern wills and estate records. These routes yield different information and should not be treated as interchangeable.
+
+\begin{description}[style=nextline]
+\item[HMCTS probate records: public baseline]
+Purchase post-grant copies to build an independent, reproducible test sample across drafting styles and estate sizes. Public probate copies are a baseline, not a complete record of all deaths or a statement of actual distributions. The will is private before a grant of probate; access and processing conditions still matter.
+\item[Will-writing platforms: drafted text and metadata]
+Approach services such as Farewill (now part of Dignity) and Co-op Legal Services, which provide will-writing services and may hold digital will documents. Ask whether they would support a controlled academic pilot with consent or another appropriately established legal basis, for example by running extraction inside the provider's environment and sharing only aggregate accuracy measures. Draft wills may have been amended, revoked, or never proved: they cannot be interpreted as realised inheritances.
+\item[Solicitors and private-client departments]
+Approach both specialist private-client firms and regional practices. They may offer diverse legal drafting, trusts, complex conditions and professionally verified reference labels. A small set of collaborating firms risks strong selection by client wealth and estate complexity; record the sampling frame and avoid population claims.
+\item[Estate-administration and probate providers]
+Prioritise providers such as Co-op Legal Services and Kings Court Trust for a separate question: whether closed estate files contain final estate accounts, distributions, dates and net receipts. These are substantially more valuable than wills alone for studying realised transfers. Verify what is actually retained and whether access is lawful before designing linkage.
+\item[Will registries and search services]
+The National Will Register and Estatesearch may assist with metadata, coverage, locating a current will or identifying a potential partner network. A registration/search database is \emph{not} necessarily a repository of the full will text or a beneficiary-level transfer dataset.
+\item[Probate genealogists and beneficiary-tracing firms]
+Firms such as Fraser \& Fraser may have information on tracing beneficiaries and intestacies; their role is different from a general source of wills or completed distributions. These partnerships would primarily test identification and missing-heir issues, subject to rights and privacy.
+\end{description}
+
+\subsection{What to ask potential partners}
+Send a short research scoping enquiry, rather than asking for a bulk export. Request:
+\begin{enumerate}[nosep]
+\item Which records are held: drafts, signed final wills, probate copies, codicils, estate inventories, final accounts, distribution ledgers, beneficiary relationships and payment dates?
+\item Approximate number of cases, years, England/Wales coverage, digitisation/OCR quality, completeness and retention periods.
+\item Whether an estate is linked internally to a final version of the will and to actual distributions; whether an executed will can be distinguished from an unexecuted draft.
+\item Whether a small, governed pilot is possible using redacted documents, a secure environment, provider-run extraction or derived annotation statistics.
+\item What controller, client-confidentiality, privacy, ethics, intellectual-property, legal-basis and data-sharing approvals would be required.
+\item Whether anonymised sample characteristics can be supplied to quantify selection bias relative to national probate/estate statistics.
+\end{enumerate}
+
+A useful first-stage deliverable is a \emph{provider feasibility matrix} recording document type, sample size, realised-receipt information, permissions, cost, representativeness and likely effort. Contact does not imply agreement or access. Do not upload identifiable wills to external AI services without explicit permission and a suitable agreement. Pseudonymised beneficiary records remain personal data.
+
+\subsection{Source notes for provider scoping}
+\begin{itemize}[nosep]
+\item HMCTS probate access: \url{https://www.gov.uk/search-will-probate}
+\item Co-op probate and estate accounts: \url{https://www.co-oplegalservices.co.uk/probate-solicitors/}
+\item Farewill will-writing and partnership services: \url{https://partnerships.farewill.com/handbook/introduction}
+\item National Will Register: \url{https://www.nationalwillregister.co.uk/}
+\item ICO research safeguards: \url{https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/the-research-provisions/what-are-the-appropriate-safeguards/}
+\end{itemize}
+
 \subsection{Preparation status and dependencies}
 \begin{itemize}[nosep]
 \item \textbf{Available starting point:} public IE4Wills benchmark, subject to licence compliance.

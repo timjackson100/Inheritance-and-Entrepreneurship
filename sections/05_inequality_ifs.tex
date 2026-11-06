@@ -1,45 +1,41 @@
-\section{UK research stream A: Inheritance and inequality---extending IFS}
+\section{Sprint candidate 5: Inheritance and wealth inequality}
 \label{sec:ifs}
 
-\subsection{Starting point}
-Bourquin, Joyce and Sturrock (IFS R173, 2020; R188, 2021) combined the ONS Longitudinal Study, ELSA and WAS to project inheritance timing/size and implications for lifetime resources. The 2020 approach assumes the first parent's estate passes to the spouse, children inherit at the second death, and the relevant estate is divided equally among children. These are testable approximations. Crawford and Hood (2016) also show that inequality conclusions depend on whether pension wealth is included.
+\subsection{Five-day question}
+How are \emph{observed} inheritances distributed across age, wealth and socioeconomic groups in recent UK survey data, and how sensitive are descriptive inequality comparisons to the definition of wealth, particularly pension wealth?
 
-The main data contribution would be to \textbf{update the projections and validate their timing and allocation assumptions against observed receipts, wills and final estate accounts}.
+This builds on the IFS studies by Bourquin, Joyce and Sturrock (2020, 2021) and Crawford and Hood (2016), but does not require recreating the full restricted-data IFS projection framework during the sprint.
 
-\subsection{Research questions}
-\begin{description}[style=nextline]
-\item[A1. Timing] How close is age at second-parent death to actual inheritance receipt, by birth cohort and parental resources? ELSA receipt/death histories are the first test (Section \ref{sec:timing}).
-\item[A2. Equal division] What share of estates goes to spouses, children, grandchildren, non-family beneficiaries, charities and trusts? Do siblings actually receive equal net amounts? Requires will clauses and, ideally, final distribution accounts.
-\item[A3. Projected amounts] How have inheritance distributions changed since the original IFS estimates? Refresh parental wealth with later WAS waves, mortality with ONS data and allocation assumptions using A1--A2; compare cohort aggregates with observed receipts.
-\item[A4. Wealth inequality] How does receipt relate to wealth levels, ranks and Gini/top shares over the life cycle? Use repeated WAS/ELSA wealth components, including pension wealth, and report both absolute and relative differences.
-\item[A5. Inequality of opportunity] How much do transfers reinforce differences by parental wealth, education, geography and siblings? Distinguish inequality among recipients from gaps between parental-background groups.
-\item[A6. Gifts plus inheritance] How does including inter vivos gifts/loans change the distribution and age of total lifetime transfers? Avoid double counting money given before death.
-\end{description}
+\subsection{Data package by December 2026}
+The primary source is \textbf{WAS (UKDS 7215; 2006--2022)}, available under EUL. Prepare compatible waves with inheritance receipt and amount, respondent/household age, wealth components (financial, property, physical and pension), income or socioeconomic measures, and survey weights. Use published IFS tables and methods as comparison benchmarks. ELSA inheritance histories are an optional independent check if separately prepared.
 
-\subsection{Data needed}
+The core package requires a year-end variable audit and authorised participant access. Check that receipt variables and detailed wealth measures coexist in a usable sample; do not promise an exact IFS replication before this audit.
+
+\subsection{Five-day deliverables}
 \begin{itemize}[nosep]
-\item \textbf{Surveys:} birth cohort, parental mortality/wealth or proxies, reported transfer source, value/year, repeated wealth and pensions, family background, weights and attrition.
-\item \textbf{Estate sample:} number of children, spouse status, estate assets, intended shares, actual net beneficiary distributions and dates; record sample selection.
-\item \textbf{Restricted extension:} approved family links and estate-to-recipient outcomes, only if suitable administrative data and lawful linkage exist.
+\item Weighted inheritance receipt rates and values by age/cohort, initial or current wealth group and socioeconomic characteristics.
+\item Transfer concentration, wealth ranks and Gini/percentile comparisons with and without pension wealth.
+\item A transparent descriptive accounting comparison and sensitivity analysis, distinguishing absolute wealth gaps from relative inequality.
+\item Reproducible tables/charts against selected published IFS findings, with sampling and measurement caveats.
 \end{itemize}
 
-First compare distributions across separate sources; do not identify anonymous survey respondents using wills. Recognise censoring among younger cohorts and sample differences between probate, surveys and taxable estates. Subtracting inheritances mechanically from wealth is an accounting comparison, not a causal counterfactual.
+The association of inheritance with wealth is not a causal estimate. A mechanical subtraction of inheritances from current wealth ignores spending, saving responses and anticipation; the sprint should label any such calculation accordingly.
 
-\subsection{Outputs}
-An updated IFS-style cohort table, validation of second-death/equal-split assumptions, and a transparent decomposition of wealth inequality by inheritance, pension inclusion and parental background.
+\subsection{To do by 31 December 2026}
+\begin{itemize}[nosep]
+\item Obtain WAS EUL files and identify exact inheritance, wealth and pension measures by wave.
+\item Match published IFS definitions and select feasible benchmark tables.
+\item Calculate weighted sample counts, receipt distributions and baseline inequality statistics.
+\item Prepackage a clean, documented extract and reproducible scripts under permitted access arrangements.
+\item Confirm the five-day question remains answerable with the observed sample and variables.
+\end{itemize}
 
-\subsection{Key sources}
+\subsection{Longer-term extension}
+Revisit the IFS cohort projections using ONS Longitudinal Study, ELSA and more recent WAS data; test their assumptions that the first parent's estate passes to the spouse, children inherit at the second death, and estates are split equally. Modern wills and completed estate accounts could validate intended versus realised allocations. Extend to lifetime gifts, parental wealth, social mobility and dynamic wealth inequality, with separately approved administrative data where necessary.
+
+\subsection{Key literature}
 \begin{itemize}[nosep]
 \item IFS R173 (2020): \url{https://ifs.org.uk/publications/inheritances-and-inequality-within-generations}
 \item IFS R188 (2021): \url{https://ifs.org.uk/publications/inheritances-and-inequality-over-life-cycle-what-will-they-mean-younger-generations}
 \item Crawford and Hood (2016): \url{https://ifs.org.uk/journals/lifetime-receipt-inheritances-and-distribution-wealth-england}
-\end{itemize}
-
-\subsection{To do}
-\begin{itemize}[nosep]
-\item Reconstruct the IFS data sources, definitions and assumptions; seek replication material if available.
-\item Audit ELSA/WAS for observed receipt age, parental background, wealth and pensions.
-\item Test second-parent-death timing and, with an approved estate sample, equal-split assumptions.
-\item Update inheritance projections by cohort and document sensitivity to changed assumptions.
-\item Estimate separate absolute/relative inequality and intergenerational-mobility summaries, with limitations explicit.
 \end{itemize}

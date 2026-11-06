@@ -1,36 +1,34 @@
-\section{UK research stream C: Lifetime gifts, donor decisions and estates}
+\section{Sprint candidate 7: Lifetime gifts and loans}
 \label{sec:gifts}
 
-The donor side matters because lifetime gifts, loans, trusts, inheritances and charitable legacies differ in timing, recipients and economic effects. IFS research by Boileau and Sturrock using WAS is a useful starting point.
+\subsection{Five-day question}
+Who gives and receives substantial lifetime gifts and family loans, at what ages, and for which purposes? How do these transfers compare with reported inheritances in timing and distribution across wealth and parental socioeconomic groups?
 
-\subsection{Candidate research questions and data}
-\begin{description}[style=nextline]
-\item[C1. Lifetime gifts versus bequests]
-How much is given before death, to whom and at what age? Need gifts \emph{given} and \emph{received}, amounts, dates, relationships, loans/repayments, donor wealth and eventual estate value. WAS is an initial source; question improvements under consultation are not existing observations.
-\item[C2. Unequal division between children]
-Are intended and actual estate shares equal across siblings? Need the number of children, gifts to each, signed final will/codicil, trusts, spouse transfers and final net distributions. An estate's gross value alone cannot establish recipient shares.
-\item[C3. Care and late-life wealth depletion]
-How do care needs, health, widowhood and longevity relate to asset sales, gifting and estates? Need repeated donor wealth, care status/costs, household changes, death dates and final estates. Wealth depletion alone does not reveal care spending.
-\item[C4. Business succession]
-How often are family businesses transferred in kind and what happens afterward? Need business ownership, tax reliefs, beneficiary relationships, post-transfer firm survival/investment and employees. Requires appropriate estate--firm linkage.
-\item[C5. Tax and estate planning]
-How do exemptions, thresholds and tax changes relate to gifting, trusts and estate composition? Need legislative timing and detailed tax/estate records. Non-taxable gifts may be absent from HMRC records.
-\item[C6. Charitable and non-family bequests]
-How much goes to charities, friends and other beneficiaries? Need will clauses, final accounts and possibly charity legacy receipts. Pledged gifts are not necessarily realised payments.
-\end{description}
+\subsection{Data package by December 2026}
+Use the \textbf{WAS (UKDS 7215; 2006--2022)} gifts and loans modules, including reported giving/receipt, amounts, age, relationship, stated purpose, wealth, income, parental background (where present), wave and weights. Published IFS work by Boileau and Sturrock provides established definitions and benchmarks. The survey records significant transfers (including gifts or loans of at least \pounds500 in relevant waves), not every small or informal flow; verify thresholds and questions for each wave.
 
-\subsection{Data and outputs}
-A transfer-type dictionary should distinguish gifts, loans, inheritances, trusts, spousal transfers and business succession. Useful products include a donor/recipient variable inventory, a WAS descriptive giving-and-receiving panel, and a legally authorised estate sample comparing intended with realised distributions. Preserve selection, recall and possible double counting across lifetime gifts and estates.
+The UKDS EUL source already exists. Prepare a clean extract, variable dictionary and survey-weighted pilot before the sprint. Giving and receiving reports from different households are not automatically matched sides of one transaction.
 
-\subsection{Source}
+\subsection{Five-day deliverables}
+\begin{itemize}[nosep]
+\item Weighted transfer rates, real values and concentration by age, wealth, income and parental background.
+\item Breakdown by giver--recipient relationship and stated purpose, particularly housing.
+\item Distinguish gifts from loans and compare the age profile of lifetime transfers with inheritances.
+\item Reproduce or update selected IFS descriptive charts using the available WAS waves, reporting recall and survey limitations.
+\end{itemize}
+
+\subsection{To do by 31 December 2026}
+\begin{itemize}[nosep]
+\item Confirm the precise gifts-given, gifts-received, loans and inheritance questions across WAS rounds.
+\item Obtain the EUL extract, harmonise amounts, inflation adjustments, thresholds and survey weights.
+\item Check sample sizes by transfer type, purpose, relationship and age group.
+\item Select published IFS benchmarks and produce an initial summary table.
+\item Package the data/code under permitted Turing access; flag questionnaire changes requested but not yet collected.
+\end{itemize}
+
+\subsection{Longer-term extension}
+Link donor-side gifts, later estates and realised beneficiary allocations where a lawful source exists. Study unequal transfers to siblings, care-related late-life wealth depletion, business succession, tax planning, charitable legacies and the substitution between gifts and bequests. These require estate accounts, richer family relationships or restricted administrative records and should not be promised as five-day outputs.
+
+\subsection{Key literature}
 Boileau and Sturrock, \emph{Who gives wealth transfers to whom and when?}, IFS:
 \url{https://ifs.org.uk/publications/who-gives-wealth-transfers-whom-and-when-patterns-giving-and-receiving-lifetime-gifts}
-
-\subsection{To do}
-\begin{itemize}[nosep]
-\item Audit WAS gift-given, gift-received, inheritance and loan variables, recording what remains missing.
-\item Align the three planned WAS questionnaire-feedback themes with measured data gaps, without treating requested questions as collected data.
-\item Ask probate/estate partners about final beneficiary ledgers, asset types, payment dates and sibling relationships.
-\item Pilot descriptive analyses of transfer timing, unequal allocation, care-related wealth depletion and charitable giving.
-\item Assess whether business succession and tax planning require restricted HMRC or firm-level records.
-\end{itemize}

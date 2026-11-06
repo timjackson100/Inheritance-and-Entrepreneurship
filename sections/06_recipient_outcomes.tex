@@ -1,37 +1,32 @@
-\section{UK research stream B: Economic outcomes after inheritance}
+\section{Sprint candidate 6: Recipient balance sheets after inheritance}
 \label{sec:outcomes}
 
-\subsection{Common data requirement}
-To measure what recipients do after inheriting, we need the transfer's \textbf{date, value, source and asset type}; the recipient's prior wealth, debt, income and family background; and repeated outcomes before and after receipt. ELSA, WAS and Understanding Society may support distinct within-survey analyses, subject to variable overlap. Detailed business, earnings or credit outcomes may need separately approved administrative linkage.
+\subsection{Five-day question}
+How do housing, debt and asset holdings differ before and after a reported inheritance, and how do these patterns vary by recipient age and initial financial position? The five-day task is descriptive; it does not claim a causal inheritance effect.
 
-\subsection{Candidate research questions}
-\begin{description}[style=nextline]
-\item[B1. Entrepreneurship]
-Does inheritance precede business entry, self-employment or expansion, especially for low-liquid-wealth recipients? Need firm start date, pre-transfer employment/wealth, firm performance and survival. Distinguish starting a business from inheriting a family firm. Possible sources: surveys, HMRC business records and Companies House (linkage conditional).
-\item[B2. Housing]
-Does it accelerate first home purchase, improve deposits, change housing tenure or reduce mortgages? Need transfer date, property transactions/tenure, mortgage balance and baseline wealth. Start with WAS; Land Registry and lender data would be conditional extensions.
-\item[B3. Saving, debt and portfolios]
-How are financial, housing and pension assets and secured/unsecured debts rebalanced after receipt? Need repeated gross asset and liability categories, not just net worth. A self-reported use of inheritance is not a complete accounting of a fungible transfer.
-\item[B4. Work and retirement]
-Do recipients reduce hours, retire early, change jobs or invest in training? Need longitudinal earnings, hours, employment, occupations and pensions. ELSA is relevant later in life; Understanding Society and approved tax data may cover younger workers.
-\item[B5. Consumption and resilience]
-Does receipt reduce arrears/financial hardship or finance major purchases? Need spending or transaction data and household hardship indicators. Survey spending categories alone may be insufficient for comprehensive consumption estimates.
-\item[B6. Family and location]
-Does inheritance affect household formation, geographic mobility or subsequent gifts to children? Need household histories, residence and transfer dates, with local trends as controls.
-\end{description}
+\subsection{Data package by December 2026}
+Use \textbf{WAS (UKDS 7215; 2006--2022)} with survey-provided longitudinal identifiers, inheritance receipt/amount and wave or receipt timing, repeated property and financial wealth, mortgage/unsecured debt, pensions, housing tenure, age, income and weights. ELSA is a possible secondary later-life panel if its receipt and outcome dates overlap.
 
-For every question, examine heterogeneity by recipient age, transfer amount, prior liquidity, parental resources, education, gender, siblings and region. These may be distinctive economic mechanisms even without a full causal design.
+Prepare a sample of recipients with usable pre/post observations and a documented non-recipient comparison group. Verify timing, panel attrition and wealth components before committing to event-time plots. The accessible EUL data exist, but adequate overlap and permission for the DSG environment must be checked by year-end.
 
-\subsection{Empirical sequence and cautions}
-Start by counting recipients with an observed pre-transfer and post-transfer panel. Plot outcomes in event time, adjust for survey weights/attrition and check anticipation. Bereavement, care responsibilities and selection into receipt can independently affect outcomes. Event plots are descriptive unless an appropriate identification strategy is established; a parental death is not automatically an exogenous instrument for inheritance.
-
-The first accessible results are most likely wealth composition, housing and employment/retirement trajectories. Firm survival, detailed consumption, tax earnings and credit require richer data and permissions.
-
-\subsection{To do}
+\subsection{Five-day deliverables}
 \begin{itemize}[nosep]
-\item Build an outcome-by-dataset matrix covering exact variables, waves and sample overlap.
-\item Prioritise feasible WAS/ELSA panels for housing, wealth/debt and employment.
-\item Define transfer event windows, receipt amounts, baseline characteristics and comparison samples.
-\item Produce simple pre/post descriptive plots with attrition and bereavement checks.
-\item Scope more ambitious firm, earnings and credit linkage separately; identify which additional fields are indispensable.
+\item Recipient and non-recipient sample-flow tables with transfer sizes and baseline characteristics.
+\item Changes in net wealth, liquid assets, housing wealth, mortgage debt and other debt around reported receipt.
+\item Heterogeneity by age, initial wealth/liquidity, transfer size and parental-background variables where observed.
+\item Reproducible descriptive plots and clear limitations for anticipation, bereavement, selection and measurement intervals.
 \end{itemize}
+
+If timing is too coarse for event-time estimation, use within-panel changes over survey intervals and state exactly what those comparisons identify.
+
+\subsection{To do by 31 December 2026}
+\begin{itemize}[nosep]
+\item Audit WAS inheritance and repeat-wealth modules; identify event dates/intervals and panel IDs.
+\item Count usable recipients with at least one pre- and post-receipt observation.
+\item Produce a small pilot table for housing, financial wealth, debt and pensions.
+\item Document weights, attrition, inflation adjustments and comparison-group rules.
+\item Freeze the outcome subset and decide whether event-time or interval-change analysis is viable.
+\end{itemize}
+
+\subsection{Longer-term extension}
+Study entrepreneurship and self-employment, firm formation/survival, labour supply, retirement, detailed consumption, geographic mobility and family formation. These require richer histories and potentially HMRC earnings/business records, Companies House, lender data or Land Registry records under separate approvals. Explore causal designs only when their assumptions can be defended; parental death and inheritance are not automatically exogenous.

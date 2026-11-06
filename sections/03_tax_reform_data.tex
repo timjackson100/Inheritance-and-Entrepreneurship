@@ -1,36 +1,32 @@
-\section{Strand 3: Inheritance-tax reforms and economic outcomes}
+\section{Sprint candidate 3: Inheritance-tax reforms and outcomes}
 \label{sec:tax}
 
-\subsection{Aim and US core panel}
-Estimate economic changes around inheritance/estate-tax reforms using publicly available aggregate data. The core is a panel of 50 US states plus DC, targeting 2003--2024 (up to 1,122 state-years, before variable-specific missingness). The six principal repeal jurisdictions are Ohio, North Carolina, Indiana, Tennessee, New Jersey and Delaware (2013--2018). Record multistage reforms separately, including New Jersey's 2017 exemption rise and 2018 estate-tax repeal.
+\subsection{Five-day question}
+What changes in firm births and house prices can be detected around six US state estate/inheritance-tax repeals, and how sensitive are estimates to reform timing, comparison groups and statistical power?
 
-\subsection{Outcome data}
-\begin{description}[style=nextline]
-\item[Business formation] Census Business Dynamics Statistics: firm/establishment births and employment creation (applications are not realised start-ups).
-\item[Housing] FHFA house-price indices and ACS ownership/tenure.
-\item[Consumption] BEA state personal consumption expenditures, with real and per-capita variants.
-\item[Debt] New York Fed state household debt balances, components and delinquency (stocks, not repayments).
-\item[Controls] BEA GDP/income and ACS demographic/distribution measures.
-\item[Reform magnitude] Census state death- and gift-tax collections (T50), scaled by population/income using pre-reform years.
-\end{description}
-Maintain source, frequency, unit, vintage, licence, missingness and transformation fields for each series. Keep annual and quarterly data distinct.
+\subsection{Data package by December 2026}
+Assemble a public panel of 50 states plus DC, targeting 2003--2024 (up to 1,122 state-years, with source-specific missingness), with reforms in Ohio, North Carolina, Indiana, Tennessee, New Jersey and Delaware (2013--2018).
 
-\subsection{Reform register and methods}
-Create one verified row per legislative step: tax type, jurisdiction, announcement/passage/effective dates, thresholds, rates, exemptions, affected groups, transitional rules, concurrent reforms, primary-source passage and verification status. The submission scoped around 19 legislative steps and 50--70 official documents including extensions.
-
-Begin with staggered difference-in-differences/event studies for US business formation and house prices. Check pre-trends, anticipation, concurrent taxes, placebo dates, comparison groups, migration/age composition and statistical power. Synthetic controls are optional. An additional AI task tests extraction of policy parameters from official documents, including labelled altered copies, and whether extraction errors change estimates.
-
-\subsection{International extensions}
-Only if the US core is complete: Norway's 2014 abolition (SSB accounts, housing, firms), Finland's 2013/2015 increases and 2017 reductions (Statistics Finland; business-data break near 2013), and South Africa's 2018 higher top estate duty (SARB, BIS, World Bank). Screen concurrent reforms carefully. Sweden, Japan, Italy, the Philippines and Colombia were scoped for document extraction only.
-
-\subsection{Proposed outputs}
-A US state-year panel, a long outcome-series dictionary, a checked reform register and source-document corpus, baseline event-study notebooks and power calculations. Secondary international panels and AI extraction tests are conditional. No confidential individual records are required for the core analysis.
-
-\subsection{To do}
 \begin{itemize}[nosep]
-\item Download and harmonise BDS, BEA, FHFA, ACS, New York Fed and Census T50 data.
-\item Verify the six US reforms and their announcement/effective dates against primary legislation.
-\item Build the event register, source dictionary, exposure variables and concurrent-policy flags.
-\item Run business-formation and house-price baselines, placebo/pre-trend checks and power analysis.
-\item Pilot AI extraction; add international panels only after the US core is stable.
+\item \textbf{Primary outcomes:} Census Business Dynamics Statistics (firm/establishment births) and FHFA house-price indices.
+\item \textbf{Controls/secondary outcomes:} BEA state income, GDP and consumption; ACS tenure and demographics; New York Fed debt balances.
+\item \textbf{Reform register:} announcement, passage and effective dates, tax type, rates/exemptions, affected estates, concurrent changes and source passages. Keep New Jersey's 2017 exemption rise distinct from its 2018 estate-tax repeal.
+\item \textbf{Reform intensity:} state death/gift tax collections (Census T50) before repeal, with documented limitations.
 \end{itemize}
+
+Prepare tidy data, a variable dictionary, verified legislation and runnable baseline notebooks. This package uses aggregate public data and has no beneficiary-identity access dependency.
+
+\subsection{Five-day deliverables}
+Staggered event studies/difference-in-differences with confidence intervals, pre-trends, anticipation and placebo checks, and a power assessment. The first outcomes are business formation and house prices; consumption and debt are extensions if ready. A separate optional task tests AI extraction of policy parameters against the checked register.
+
+\subsection{To do by 31 December 2026}
+\begin{itemize}[nosep]
+\item Download, clean and merge BDS, FHFA and BEA core series; document units and coverage.
+\item Double-check repeal dates and legislative steps against primary sources.
+\item Build treatment, comparison-state and concurrent-policy variables.
+\item Run baseline estimates and a power check; freeze a reproducible public data package.
+\item Add optional NY Fed/ACS series and AI document tests only after the core works.
+\end{itemize}
+
+\subsection{Longer-term extension}
+Study additional outcomes, tax-reform magnitude and heterogeneous responses; add synthetic-control designs and country panels for Norway (2014), Finland (2013/2015/2017) and South Africa (2018), screened for confounding reforms. Sweden, Japan, Italy, the Philippines and Colombia are possible further policy-document cases. Administrative beneficiary-level effects require a separate research project.

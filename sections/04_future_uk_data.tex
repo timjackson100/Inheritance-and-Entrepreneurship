@@ -1,54 +1,40 @@
 \section{Follow-on UK data architecture and access}
 \label{sec:followon}
 
-This section identifies the data infrastructure needed for a longer UK inheritance programme. \textbf{It is separate from the three Turing DSG deliverables.} Sections \ref{sec:ifs}, \ref{sec:outcomes} and \ref{sec:gifts} turn the data possibilities into distinct empirical research streams.
+The following is a \emph{separate, longer-term data programme}, not a committed Turing DSG deliverable. Sections \ref{sec:ifs}--\ref{sec:gifts} set out the distinct inequality, recipient-outcome and donor-side research streams.
 
-\subsection{Units of observation}
-An ideal research resource would distinguish five records, rather than treating \emph{an inheritance} as one observation:
+\subsection{What would an ideal dataset contain?}
+Five linked record types:
 \begin{enumerate}[nosep]
-\item \textbf{Estate/donor:} deceased or living giver, estate value, asset mix, date, taxes, number and relationships of potential recipients.
-\item \textbf{Intended transfer:} specific and residuary provisions in a valid will, gifts, trusts, contingent conditions and charitable beneficiaries.
-\item \textbf{Realised transfer:} recipient, amount, asset type, net value and actual payment or title-transfer date.
-\item \textbf{Recipient background:} age, wealth, education, income, family background, location and prior outcomes.
-\item \textbf{Recipient trajectory:} repeated observations of wealth, property, debt, work, business ownership, saving and consumption before and after the transfer.
+\item \textbf{Estate/donor:} wealth/assets, death or gift date, tax and family composition.
+\item \textbf{Intended gift:} named beneficiaries, relationships, shares and conditions in wills/trusts.
+\item \textbf{Realised transfer:} net amount, asset type, recipient and actual transfer date.
+\item \textbf{Recipient baseline:} age, wealth, education, family background, income and location.
+\item \textbf{Recipient outcomes:} subsequent wealth, work, entrepreneurship, housing, debt and saving.
 \end{enumerate}
-No single readily accessible UK dataset is known to provide this complete chain. Each source must be evaluated for the subset it genuinely contains.
+No currently identified accessible UK source supplies the entire chain. In particular, intended gifts in wills and final distributions in estate accounts are different observations.
 
-\subsection{Candidate source families}
+\subsection{Candidate sources}
 \begin{description}[style=nextline]
-\item[ELSA (UK Data Service 5050)]
-Inheritance histories, parental mortality and repeated economic measures for older people; the main timing and proxy-validation route, subject to variable and licence audits.
-\item[Wealth and Assets Survey (WAS; UKDS 7215)]
-Wealth stocks, composition, inheritance and inter vivos transfer questions; candidate for inequality and post-receipt balance-sheet analysis. Check exact waves, identifiers, survey weights and transfer purpose before specifying regressions.
-\item[Understanding Society (UKDS 6614)]
-Possible repeated employment, income, housing and transfer observations, subject to inheritance variables and sufficient recipient events.
-\item[ONS Longitudinal Study of England and Wales]
-A restricted 1\% population sample linking census and vital events, useful for intergenerational background and cohort structure. The IFS inheritance projections combined this with ELSA and WAS; access is not open.
-\item[HMRC Datalab, HMCTS and other administrative custodians]
-Possible estate-tax, probate and economic records. Their contents, linkage keys and approval routes are unverified. HMRC's scoping response asks for research questions tied to its functions; access would require a distinct approved project.
-\item[Estate administration and private providers]
-Potential wills, estate accounts, actual distributions and beneficiary relationships. A partner-specific feasibility study is needed; registration of a will is not proof of access to its text or to actual payments.
-\item[Companies House, HM Land Registry and other registers]
-Possible business and property outcomes. Public register entries do not by themselves yield accurate person-level links to survey respondents or inheritance recipients.
+\item[ELSA] Parental mortality, inheritance histories and later-life wealth/work outcomes; licensed and subject to variable audit.
+\item[WAS] Wealth components, inheritance and lifetime transfers, housing, debts and pensions; survey coverage and longitudinal overlap require checks.
+\item[Understanding Society] Possible transfer, employment and household trajectories; exact variables not yet established.
+\item[ONS Longitudinal Study] Restricted census and life-events sample, used in the IFS projections for intergenerational characteristics.
+\item[HMRC/ONS/HMCTS] Potential estate, tax, probate and economic administrative records; availability and any lawful linkage route remain unverified.
+\item[Private probate/estate firms] Potential wills, final accounts, beneficiary relationships and payments; contact and permission required.
+\item[Companies House/Land Registry] Potential firm and housing outcomes, not automatic person-level matches.
 \end{description}
 
-\subsection{Minimum data dictionary}
-For every candidate source, record:
+\subsection{Minimum data inventory and access boundaries}
+For each source, record unit, population, period, transfer type, amount, date, donor--recipient relationship, asset composition, outcome variables, sample coverage, identifiers, licence and disclosure conditions. Mark fields as \emph{verified}, \emph{candidate} or \emph{unavailable}.
+
+Start with analyses wholly inside licensed surveys. Separate samples can be compared in aggregate without matching identifiable probate material to anonymous survey records. Any individual-level administrative linkage requires custodian approval and secure governance. Pseudonymised data remain personal data.
+
+\subsection{To do}
 \begin{itemize}[nosep]
-\item population and unit of observation; date coverage; geographic coverage and sampling/selection;
-\item transfer type (death inheritance, lifetime gift, loan, trust, business succession, charity) and whether it is intended or realised;
-\item date, value, gross/net distinction, recipient relationship, siblings/number of heirs and asset composition;
-\item longitudinal recipient outcomes and available baseline wealth/background;
-\item identifier availability, researcher permissions, confidentiality, release conditions and disclosure controls;
-\item uncertainty, missingness, recall error, valuation choices and potential double counting.
+\item Build a single variable/access matrix for ELSA, WAS, Understanding Society, ONS LS and administrative sources.
+\item Confirm UKDS permissions and which inheritance/wealth variables coexist across waves.
+\item Ask probate and estate providers about final accounts, dates, relationships, sampling and secure pilot options.
+\item Develop a precise HMRC Datalab scoping request tied to HMRC functions and identify possible identifiers/outcomes with custodians.
+\item Rank candidate linked datasets by feasibility, additional information gained and governance burden.
 \end{itemize}
-
-\subsection{Access sequence and boundaries}
-\begin{enumerate}[nosep]
-\item Complete an accessible-data audit of WAS and ELSA; start with analyses wholly inside each survey.
-\item Seek UK will and provider partnerships to validate distributions, clauses and estate-administration fields in separate, governed samples.
-\item Build descriptive external comparisons between samples (for example, shares of unequal bequests), without attempting to re-identify survey participants.
-\item Only then scope a custodian-led administrative linkage with specific outcome variables, documented legal basis, approvals and a secure research environment.
-\end{enumerate}
-
-Published or licence-bound pseudonymised survey microdata must never be matched to named probate records by reverse-identification. Pseudonymisation is not anonymisation. A future administrative linkage requires approval and custodian-controlled methods. The most valuable data may be \emph{final estate distribution accounts}, rather than will text alone.

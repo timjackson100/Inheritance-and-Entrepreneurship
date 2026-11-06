@@ -1,0 +1,49 @@
+\section{Strand 1: Extracting inheritance information from wills}
+\label{sec:wills}
+
+\subsection{Research question}
+How accurately can an open-weight language model, adapted from US will-extraction benchmarks, identify people, family relationships, assets and intended bequests in wills from England and Wales?
+
+The immediate data objective is a structured, source-grounded representation of what a will \emph{intends} to transfer. A bequest in a will is not evidence that a beneficiary received it.
+
+\subsection{Data inventory}
+\begin{description}[style=nextline]
+\item[IE4Wills (core benchmark)]
+A published dataset of 45 authentic US wills and 16,018 human annotations covering testators, beneficiaries, assets, relationships and bequests. Its established annotation scheme permits a reproducible extraction baseline. Use is subject to the CC BY-NC 4.0 licence and an event-use rights check.
+\item[Modern wills from England and Wales (conditional)]
+A proposed, independently reviewed sample of 10--20 probate wills, subject to purchase, lawful processing, participant access, hosting and annotation. It tests transfer from US to UK drafting practice; it is too small to support representative claims about national extraction accuracy.
+\end{description}
+
+Scotland and Northern Ireland are separate potential extensions, not part of the initial UK-will benchmark.
+
+\subsection{Target variables}
+For each document, extract and preserve the relevant source passage for:
+\begin{itemize}[nosep]
+\item the testator and any executors or trustees;
+\item named beneficiaries and stated family or other relationships;
+\item assets, specific gifts, residuary shares and conditional bequests;
+\item gift conditions and contingent beneficiaries;
+\item uncertainty, ambiguity, absent information and failed extractions.
+\end{itemize}
+The representation must distinguish a stated relationship from a relationship inferred by the model and must avoid inventing missing beneficiaries or transfers.
+
+\subsection{Data and evaluation workflow}
+\begin{enumerate}[nosep]
+\item Check the IE4Wills licence, obtain its documents and published data splits, and reproduce a conventional or published extraction baseline.
+\item Define a consistent structured output schema, with evidence spans for every extracted assertion.
+\item Obtain and review the permitted England-and-Wales sample, if approved; create independent reference labels.
+\item Compare unadapted US-trained/prompted extraction with UK-specific prompts and schema adaptation. Fine-tuning is optional and requires enough authorised examples.
+\item Score entity/relation precision, recall and F1, evidence-span accuracy, unsupported assertions, uncertainty and computational cost. Report US and UK performance separately.
+\end{enumerate}
+
+The published IE4Wills test split is small, so uncertainty should be reported at document level. Placeholder names in IE4Wills do not establish real-world identity-linkage accuracy.
+
+\subsection{Expected outputs}
+A documented extraction schema; clean benchmark and scoring scripts; runnable open-weight baselines; an error taxonomy; and a report on what UK-specific adaptation does and does not achieve.
+
+\subsection{Preparation status and dependencies}
+\begin{itemize}[nosep]
+\item \textbf{Available starting point:} public IE4Wills benchmark, subject to licence compliance.
+\item \textbf{Not yet assured:} 10--20 lawfully usable UK wills and independently reviewed labels.
+\item \textbf{Fallback:} report reproducible US benchmark results and the limitation on UK generalisation.
+\end{itemize}
